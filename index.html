@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Song Suggestion</title>
+    <script>
+        function checkLove() {
+            var boyName = document.getElementById("boy").value.trim();
+            var girlName = document.getElementById("girl").value.trim();
+            var validBoys = ["Harshal", "harshal", "HARSHAL", "Harshu", "harshu", "HARSHU", "harsh", "HARSH", "Harsh"];
+            var validGirls = ["Rupi", "rupi", "RUPI", "RUPALI", "rupali", "Rupali"];
+
+            var resultMessage = "";
+            if (validBoys.includes(boyName) && validGirls.includes(girlName)) {
+                resultMessage = "Tum Hi Ho - by: Arijit Singh";
+            } else {
+                resultMessage = "You both are not a match.";
+            }
+
+            window.location.href = "result.php?boy=" + encodeURIComponent(boyName) + "&girl=" + encodeURIComponent(girlName) + "&result=" + encodeURIComponent(resultMessage);
+        }
+    </script>
+</head>
+<body>
+    <h2>I will suggest a song if you both love each other a lot</h2>
+    <label>Boy's Name:</label>
+    <input type="text" id="boy"><br><br>
+    <label>Girl's Name:</label>
+    <input type="text" id="girl"><br><br>
+    <button onclick="checkLove()">Check</button>
+</body>
+</html>
